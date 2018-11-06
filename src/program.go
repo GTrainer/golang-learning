@@ -25,7 +25,7 @@ func printArgsJoin() {
 
 func dup() {
 	counter := make(map[string]int)
-	for _, filename := os.Args[1:] {
+	for _, filename := range os.Args[1:] {
 		text, err := ioutil.ReadFile(filename)
 		if err != nil {
 			fmt.Println("open ", filename, " failed!")
