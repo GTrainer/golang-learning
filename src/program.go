@@ -13,10 +13,17 @@ func printArgs() {
 	}	
 }
 
+func printArgsRange() {
+	for _, arg = range os.Args[1:] {
+		fmt.Println(arg)		
+	}
+}
+
 
 func main() {
 	fmt.Println("Hello, golang!");
 
 	printArgs()
+	printArgsRange()
 }
 
