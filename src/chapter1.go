@@ -7,6 +7,7 @@ import (
 	"image/gif"
 	"io"
 	"io/ioutil"
+	"log"
 	"math"
 	"math/rand"
 	"net/http"
@@ -102,5 +103,15 @@ func mcurl() {
 	}
 
 	fmt.Printf("%.2fs elapsed, finish\n", time.Since(start).Seconds())
+}
+
+func server() {
+	http.HandleFunc("/", handler)
+	log.Fatal(http.ListenAndServe("localhost:8080", nil))
+}
+
+func handler(w http.ResponseWriter, r *http.Request) {
+	// fmt.Fprintf(w, "URL.Path = %q\n", r.URL.Path)
+	createGIF(w)
 }
 

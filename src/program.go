@@ -5,6 +5,7 @@ import (
 	"io/ioutil"
 	"os"
 	"strings"
+	"selfutil"
 )
 
 func printArgs() {
@@ -63,6 +64,15 @@ func main() {
 	//dup()
 	//makeGif()
 	//curl()
-	mcurl()
+	//mcurl()
+	//server()
+	//useFlag()
+/*
+	x := "a"
+	y := "b"
+	selfutil.Swap(&x, &y)
+	fmt.Println(x, y)
+*/
+	
 }
 
