@@ -42,12 +42,26 @@ func dup() {
 	}
 }
 
+func makeGif() {
+	file, err := os.Create("anim.gif")
+	if err != nil {
+		fmt.Printf("%v", err)
+		os.Exit(1)
+	}
+	defer file.Close()
+	
+	createGIF(file)
+	file.Sync()
+}
+
 func main() {
 	fmt.Println("Hello, golang!");
 
 	//printArgs()
 	//printArgsRange()
 	//printArgsJoin()
-	dup()
+	//dup()
+	makeGif()
+	
 }
 
