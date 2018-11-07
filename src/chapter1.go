@@ -1,12 +1,16 @@
 package main
 
 import (
+	"fmt"
 	"image"
 	"image/color"
 	"image/gif"
 	"io"
+	"io/ioutil"
 	"math"
 	"math/rand"
+	"net/http"
+	"os"
 )
 
 var palette = []color.Color{ color.White, color.Black }
@@ -44,5 +48,24 @@ func createGIF(out io.Writer) {
 	}
 
 	gif.EncodeAll(out, &anim)
+}
+
+func curl() {
+	for _, url := range os.Args[1:] {
+		rsp, err := http.Get(url)
+		if err != nil {
+			fmt.Printf("%v", err)
+			os.Exit(1)
+		}
+
+		body, err := ioutil.ReadAll(rsp.Body)
+		rsp.Body.Close()
+
+		if err != nil {
+			fmt.Printf("%v", err)
+			os.Exit(1)
+		}
+		fmt.Printf("%s", body)
+	}
 }
 
