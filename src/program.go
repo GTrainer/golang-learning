@@ -62,6 +62,7 @@ func main() {
 	//printArgsJoin()
 	//dup()
 	//makeGif()
-	curl()
+	//curl()
+	mcurl()
 }
 
