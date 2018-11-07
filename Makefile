@@ -1,3 +1,5 @@
+export GOPATH = ./
+
 all: learning
 
 learning:
