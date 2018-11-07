@@ -11,6 +11,7 @@ import (
 	"math/rand"
 	"net/http"
 	"os"
+	"time"
 )
 
 var palette = []color.Color{ color.White, color.Black }
@@ -67,5 +68,39 @@ func curl() {
 		}
 		fmt.Printf("%s", body)
 	}
+}
+
+func channelCurl(url string, barrier chan string) {
+	start := time.Now()
+
+	rsp, err := http.Get(url)
+	if err != nil {
+		fmt.Printf("%v", err)
+		os.Exit(1)
+	}
+
+	_, err = ioutil.ReadAll(rsp.Body)
+	rsp.Body.Close()
+
+	if err != nil {
+		fmt.Printf("%v", err)
+		os.Exit(1)
+	}
+	barrier<-fmt.Sprintf("%.2fs %s", time.Since(start).Seconds(), url)
+} 
+
+func mcurl() {
+	start := time.Now()
+	
+	barrier := make(chan string)
+	for _, url := range os.Args[1:] {
+		go channelCurl(url, barrier)
+	}
+
+	for range os.Args[1:] {
+		fmt.Println(<-barrier)
+	}
+
+	fmt.Printf("%.2fs elapsed, finish\n", time.Since(start).Seconds())
 }
 
