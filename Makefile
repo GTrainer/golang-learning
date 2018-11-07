@@ -1,4 +1,4 @@
-export GOPATH = ./
+export GOPATH = /home/centos/golang-learning
 
 all: learning
 
