@@ -78,6 +78,8 @@ func main() {
 	//makeSlice()
 	//makeMap()
 	//makeJson()
-	makeRun()
+	//makeRun()
+	//makeReceiver()
+	typeAssert()
 }
 
