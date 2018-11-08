@@ -77,6 +77,7 @@ func main() {
 	//printArr()
 	//makeSlice()
 	//makeMap()
-	makeJson()
+	//makeJson()
+	makeRun()
 }
 
