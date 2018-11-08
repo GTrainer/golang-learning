@@ -5,7 +5,7 @@ import (
 	"io/ioutil"
 	"os"
 	"strings"
-	"selfutil"
+	//"selfutil"
 )
 
 func printArgs() {
@@ -73,6 +73,10 @@ func main() {
 	selfutil.Swap(&x, &y)
 	fmt.Println(x, y)
 */
-	
+	//printConst()
+	//printArr()
+	//makeSlice()
+	//makeMap()
+	makeJson()
 }
 
