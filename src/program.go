@@ -80,6 +80,7 @@ func main() {
 	//makeJson()
 	//makeRun()
 	//makeReceiver()
-	typeAssert()
+	//typeAssert()
+	testGroup()
 }
 
