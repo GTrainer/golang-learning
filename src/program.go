@@ -81,6 +81,12 @@ func main() {
 	//makeRun()
 	//makeReceiver()
 	//typeAssert()
-	testGroup()
+	//testGroup()
+	//testConvert()
+	//testSwitch()
+	//testDefer()
+	//testString()
+	//testFunc()
+	testGoExit()
 }
 

@@ -4,7 +4,7 @@ import (
 	"fmt"
 )
 
-func main() {
+func testMain() {
 	fmt.Println("是" + "dsasa")
 }
 
