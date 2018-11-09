@@ -1,3 +1,3 @@
 # golang-learning
-I love it!
+This is a good language! Ilove it!
 
